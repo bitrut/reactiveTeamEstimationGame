@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Board from 'react-trello'
+import App from './components/myBoard';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
@@ -24,4 +24,4 @@ const data = {
     ]
   }
 
-ReactDOM.render(<Board data={data} draggable={true}/>, document.getElementById('app'));
+ReactDOM.render(<App/>, document.getElementById('app'));
