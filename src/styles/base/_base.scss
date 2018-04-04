@@ -18,15 +18,21 @@ button:disabled {
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 10px;
-  color: white;
+  background: $dark-purple;
+  line-height: $header-height;
+  padding: 0 $base-spacing;
+  color: #fff;
+  position: relative;
 }
 
 .App-intro {
   font-size: small;
   margin: 0;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes App-logo-spin {

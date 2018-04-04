@@ -5,3 +5,26 @@ $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
 $desktop-breakpoint: 45rem;
+
+
+$base-line-height: 1.5rem;
+$heading-line-height: 1.2;
+$base-border-radius: 3px;
+$base-spacing: 1.5rem;
+$small-spacing: 0.75rem;
+$base-z-index: 0;
+
+$header-height: 2.16rem;
+
+$blue: #3498db;
+$green: #2ecc71;
+$red: #e74c3c;
+$yellow: #f1c40f;
+$orange: #e67e22;
+$purple: #89609E;
+$gray: #bdc3c7;
+$asphalt: #34495e;
+$pink: #ff5aec;
+
+$dark-blue: darken($blue, 15%);
+$dark-purple: darken($purple, 15%);
