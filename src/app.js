@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/myBoard';
+import App from './playground/myBoard';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
