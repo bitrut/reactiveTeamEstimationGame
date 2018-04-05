@@ -1,0 +1,22 @@
+.card-title {
+    clear: both;
+    display: block;
+    margin: 0 0 4px;
+    overflow: hidden;
+    text-decoration: none;
+    word-wrap: break-word;
+    color: #4d4d4d;
+  }
+  .card {
+      background-color: $white;
+      border-bottom: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 6px;
+      max-width: 300px;
+      min-height: 20px;
+      position: relative;
+      text-decoration: none;
+      z-index: 0;
+  }
