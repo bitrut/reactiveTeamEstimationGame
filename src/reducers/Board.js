@@ -1,4 +1,4 @@
-const Board = (state = {}, action) => {
+const Boards = (state = {}, action) => {
     switch (action.type) {
         case "ADD_LIST": {
             const { boardId, listId } = action.payload;
