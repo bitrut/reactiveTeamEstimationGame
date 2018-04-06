@@ -101,7 +101,7 @@ class Card extends Component {
                   this.handleKeyDown(event);
                 }}
                 style={{
-                  ...provided.draggableProps.style,
+                  provided.draggableProps.style,
                   background: card.color
                 }}
               >

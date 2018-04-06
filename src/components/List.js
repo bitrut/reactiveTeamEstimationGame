@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Draggable } from "react-beautiful-dnd";
-import classnames from "classnames";
 import ListHeader from "./ListHeader";
 import Cards from "./Cards";
-import CardAdder from "../CardAdder/CardAdder";
+import CardAdder from "./CardAdder";
 
 class List extends React.Component {
   static propTypes = {
