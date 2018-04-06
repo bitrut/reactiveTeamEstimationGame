@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Draggable } from "react-beautiful-dnd";
-import classnames from "classnames";
 import CardModal from "./CardModal";
 import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
@@ -101,7 +100,7 @@ class Card extends Component {
                   this.handleKeyDown(event);
                 }}
                 style={{
-                  provided.draggableProps.style,
+                  ...provided.draggableProps.style,
                   background: card.color
                 }}
               >

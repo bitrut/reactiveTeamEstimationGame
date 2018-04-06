@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Home from "./components/Home";
 import BoardContainer from "./components/BoardContainer";
 import LandingPage from "./components/LandingPage";
-import "./styles/base/base";
+import './styles/styles.scss';
 
 const App = ({ user, isGuest }) => {
   // Serve different pages depending on if user is logged in or not

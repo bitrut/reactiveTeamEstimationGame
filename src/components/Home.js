@@ -4,10 +4,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import slugify from "slugify";
-import classnames from "classnames";
-import Header from "../Header/Header";
+import Header from "./Header";
 import BoardAdder from "./BoardAdder";
-import "./Home.scss";
 
 class Home extends React.ComponentComponent {
   static propTypes = {
