@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Droppable } from "react-beautiful-dnd";
-import Card from "../Card/Card";
+import Card from "./Card";
 
 class Cards extends React.Component {
   static propTypes = {
