@@ -6,7 +6,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import classnames from "classnames";
 import List from "List";
 import ListAdder from "./ListAdder";
-import Header from "Header";
+import Header from "./Header";
 import BoardHeader from "./BoardHeader";
 
 class Board extends React.arrayOfComponent {
