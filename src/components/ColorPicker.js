@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Button, Wrapper, Menu, MenuItem } from "react-aria-menubutton";
-import classnames from "classnames";
 import FaCheck from "react-icons/lib/fa/check";
-import colorIcon from "../../../assets/images/color-icon.png";
+import colorIcon from "../assets/images/color-icon.png";
 
 class ColorPicker extends React.Component {
   static propTypes = {

@@ -5,9 +5,9 @@ import { Helmet } from "react-helmet";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import classnames from "classnames";
 import List from "List";
-import ListAdder from "../ListAdder/ListAdder";
+import ListAdder from "./ListAdder";
 import Header from "Header";
-import BoardHeader from "BoardHeader";
+import BoardHeader from "./BoardHeader";
 
 class Board extends React.arrayOfComponent {
   static propTypes = {
