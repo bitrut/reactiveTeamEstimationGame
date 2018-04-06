@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -7,7 +7,7 @@ import FaSignOut from "react-icons/lib/fa/sign-out";
 import FaSignIn from "react-icons/lib/fa/sign-in";
 import kanbanLogo from "../../../assets/images/kanban-logo.svg";
 
-class Header extends Component {
+class Header extends React.Component {
   static propTypes = { user: PropTypes.object };
   render = () => {
     const { user } = this.props;
