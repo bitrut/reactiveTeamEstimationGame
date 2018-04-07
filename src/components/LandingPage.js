@@ -12,8 +12,8 @@ class LandingPage extends React.Component {
     dispatch: PropTypes.func.isRequired
   };
 
-  enterAsGuest = () => {
-    this.props.dispatch({ type: "ENTER_AS_GUEST" });
+  enterAsGuest = (props) => {
+      props.dispatch({ type: "ENTER_AS_GUEST" });
   };
 
   render = () => (
@@ -61,7 +61,7 @@ class LandingPage extends React.Component {
             </div>
             <div className="guest-button-wrapper">
               <button
-                onClick={this.enterAsGuest}
+                onClick={this.enterAsGuest(this.props)}
                 className="signin-button guest-button"
               >
                 <FaUserSecret className="logo-icon" /> &nbsp;Enter as guest

@@ -16,7 +16,7 @@ class Home extends React.Component {
         title: PropTypes.string.isRequired
       }).isRequired
     ).isRequired,
-    listsById: PropTypes.object.isRequired,
+    lists: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired
   };
   render = () => {
@@ -64,8 +64,10 @@ class Home extends React.Component {
     );
   };
 }
-const mapStateToProps = state => ({
-  boards: Object.values(state.boardsById),
-  listsById: state.listsById
-});
+const mapStateToProps = (state) => {
+  return {
+    boards: Object.values(state.Boards),
+    lists: state.Lists
+  };
+}
 export default connect(mapStateToProps)(Home);

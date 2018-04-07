@@ -29,7 +29,12 @@ const App = ({ user, isGuest }) => {
 
 App.propTypes = { user: PropTypes.object, isGuest: PropTypes.bool.isRequired };
 
-const mapStateToProps = state => ({ user: state.user, isGuest: state.isGuest });
+const mapStateToProps = (state) => { 
+  return {
+    user: state.user,
+    isGuest: state.isGuest
+  };
+ }
 
 // Use withRouter to prevent strange glitch where other components
 // lower down in the component tree wouldn't update from URL changes
