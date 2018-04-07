@@ -155,7 +155,7 @@ class CardOptions extends Component {
           style={isThinDisplay ? calendarMobileStyle : calendarStyle}
         >
           <Calendar
-            cardId={card._id}
+            cardId={card.id}
             date={card.date}
             toggleCalendar={this.toggleCalendar}
           />

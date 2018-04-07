@@ -2,6 +2,7 @@ import React from "react";
 import BoardTitle from "./BoardTitle";
 import ColorPicker from "./ColorPicker";
 import BoardDeleter from "./BoardDeleter";
+import '../styles/components/_boardHeader.scss'
 
 const BoardHeader = () => (
   <div className="board-header">

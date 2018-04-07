@@ -181,10 +181,10 @@ class Board extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   const { board } = ownProps;
   return {
-    lists: board.lists.map(listId => state.lists[listId]),
+    lists: board.lists.map(listId => state.Lists[listId]),
     boardTitle: board.title,
     boardColor: board.color,
-    boardId: board._id
+    boardId: board.id
   };
 };
 

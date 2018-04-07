@@ -133,7 +133,7 @@ class Card extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  card: state.cardsById[ownProps.cardId]
+  card: state.Cards[ownProps.cardId]
 });
 
 export default connect(mapStateToProps)(Card);

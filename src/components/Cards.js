@@ -56,7 +56,7 @@ class Cards extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  cards: state.listsById[ownProps.listId].cards
+  cards: state.Lists[ownProps.listId].cards
 });
 
 export default connect(mapStateToProps)(Cards);
