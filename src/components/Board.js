@@ -8,7 +8,7 @@ import ListAdder from "./ListAdder";
 import Header from "./Header";
 import BoardHeader from "./BoardHeader";
 
-class Board extends React.arrayOfComponent {
+class Board extends React.Component {
   static propTypes = {
     lists: PropTypes.arrayOf(
       PropTypes.shape({ _id: PropTypes.string.isRequired })

@@ -73,4 +73,4 @@ const Boards = (state = {}, action) => {
     }
 };
 
-export default Board;
+export default Boards;

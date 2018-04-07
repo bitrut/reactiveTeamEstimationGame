@@ -7,7 +7,7 @@ import slugify from "slugify";
 import Header from "./Header";
 import BoardAdder from "./BoardAdder";
 
-class Home extends React.ComponentComponent {
+class Home extends React.Component {
   static propTypes = {
     boards: PropTypes.arrayOf(
       PropTypes.shape({
