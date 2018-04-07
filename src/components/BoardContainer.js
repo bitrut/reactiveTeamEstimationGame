@@ -13,7 +13,7 @@ BoardContainer.propTypes = { board: PropTypes.object };
 
 const mapStateToProps = (state, ownProps) => {
   const { boardId } = ownProps.match.params;
-  const board = state.boardsById[boardId];
+  const board = state.Boards[boardId];
   return { board };
 };
 

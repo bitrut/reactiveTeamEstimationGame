@@ -7,6 +7,7 @@ import List from "./List";
 import ListAdder from "./ListAdder";
 import Header from "./Header";
 import BoardHeader from "./BoardHeader";
+import '../styles/components/_board.scss'
 
 class Board extends React.Component {
   static propTypes = {

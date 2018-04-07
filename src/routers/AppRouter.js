@@ -13,7 +13,7 @@ const App = ({ user, isGuest }) => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/b/:boardId" component={BoardContainer} />
-        <Redirect from="*" to="/" />
+        <Redirect to="/" />
       </Switch>
     );
   }
