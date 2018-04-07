@@ -22,7 +22,6 @@
     "classnames": "^2.2.5",
     "css-loader": "0.28.4",
     "date-fns": "^1.29.0",
-    "file-loader": "^1.1.11",
     "live-server": "^1.2.0",
     "marked": "^0.3.19",
     "node-sass": "4.5.3",
@@ -46,6 +45,7 @@
     "shortid": "^2.2.8",
     "slugify": "^1.2.9",
     "style-loader": "0.18.2",
+    "url-loader": "^1.0.1",
     "validator": "8.0.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1"

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import '../styles/components/_boardTitle.scss'
+import '../styles/components/_boardTitle.scss';
 
 class BoardTitle extends React.Component {
   static propTypes = {
