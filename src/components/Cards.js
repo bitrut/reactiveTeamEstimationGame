@@ -10,7 +10,7 @@ class Cards extends React.Component {
     cards: PropTypes.arrayOf(PropTypes.string).isRequired
   };
 
-  componentDidUpdate = prevProps => {
+  componentDidUpdate = (prevProps) => {
     // Scroll to bottom of list if a new card has been added
     if (
       this.props.cards[this.props.cards.length - 2] ===
