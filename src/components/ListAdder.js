@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Textarea from "react-textarea-autosize";
 import shortid from "shortid";
+import '../styles/components/_listAdder.scss'
 
 class ListAdder extends React.Component {
   static propTypes = {

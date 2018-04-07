@@ -12,7 +12,7 @@ class Home extends React.Component {
   static propTypes = {
     boards: PropTypes.arrayOf(
       PropTypes.shape({
-        _id: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
         color: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired
       }).isRequired
@@ -34,9 +34,9 @@ class Home extends React.Component {
             <div className="boards">
               {boards.map(board => (
                 <Link
-                  key={board._id}
+                  key={board.id}
                   className={classnames("board-link", board.color)}
-                  to={`/b/${board._id}/${slugify(board.title, {
+                  to={`/b/${board.id}/${slugify(board.title, {
                     lower: true
                   })}`}
                 >

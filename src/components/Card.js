@@ -6,11 +6,12 @@ import CardModal from "./CardModal";
 import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
 import formatMarkdown from "./formatMarkdown";
+import '../styles/components/_card.scss'
 
 class Card extends Component {
   static propTypes = {
     card: PropTypes.shape({
-      _id: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       color: PropTypes.string
     }).isRequired,
@@ -67,7 +68,7 @@ class Card extends Component {
 
     dispatch({
       type: "CHANGE_CARD_TEXT",
-      payload: { cardId: card._id, cardText: newText }
+      payload: { cardId: card.id, cardText: newText }
     });
   };
 
@@ -77,7 +78,7 @@ class Card extends Component {
     const checkboxes = findCheckboxes(card.text);
     return (
       <div>
-        <Draggable draggableId={card._id} index={index}>
+        <Draggable draggableId={card.id} index={index}>
           {(provided, snapshot) => (
             <div>
               {/* eslint-disable */}

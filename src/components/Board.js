@@ -13,7 +13,7 @@ import '../styles/components/_board.scss'
 class Board extends React.Component {
   static propTypes = {
     lists: PropTypes.arrayOf(
-      PropTypes.shape({ _id: PropTypes.string.isRequired })
+      PropTypes.shape({ id: PropTypes.string.isRequired })
     ).isRequired,
     boardId: PropTypes.string.isRequired,
     boardTitle: PropTypes.string.isRequired,
@@ -33,7 +33,7 @@ class Board extends React.Component {
   componentDidMount = () => {
     const { boardId, dispatch } = this.props;
     dispatch({
-      type: "PUT_BOARD_ID_IN_REDUX",
+      type: "PUT_BOARDid_IN_REDUX",
       payload: { boardId }
     });
   };
@@ -161,7 +161,7 @@ class Board extends React.Component {
                         list={list}
                         boardId={boardId}
                         index={index}
-                        key={list._id}
+                        key={list.id}
                       />
                     ))}
                     {provided.placeholder}

@@ -4,20 +4,21 @@ import { connect } from "react-redux";
 import { Draggable } from "react-beautiful-dnd";
 import ListHeader from "./ListHeader";
 import Cards from "./Cards";
+import classnames from 'classnames';
 import CardAdder from "./CardAdder";
 
 class List extends React.Component {
   static propTypes = {
     boardId: PropTypes.string.isRequired,
     index: PropTypes.number.isRequired,
-    list: PropTypes.shape({ _id: PropTypes.string.isRequired }).isRequired
+    list: PropTypes.shape({ id: PropTypes.string.isRequired }).isRequired
   };
 
   render = () => {
     const { list, boardId, index } = this.props;
     return (
       <Draggable
-        draggableId={list._id}
+        draggableId={list.id}
         index={index}
         disableInteractiveElementBlocking
       >
@@ -36,15 +37,15 @@ class List extends React.Component {
                 <ListHeader
                   dragHandleProps={provided.dragHandleProps}
                   listTitle={list.title}
-                  listId={list._id}
+                  listId={list.id}
                   cards={list.cards}
                   boardId={boardId}
                 />
                 <div className="cards-wrapper">
-                  <Cards listId={list._id} />
+                  <Cards listId={list.id} />
                 </div>
               </div>
-              <CardAdder listId={list._id} />
+              <CardAdder listId={list.id} />
             </div>
             {provided.placeholder}
           </div>

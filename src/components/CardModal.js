@@ -11,7 +11,7 @@ class CardModal extends Component {
   static propTypes = {
     card: PropTypes.shape({
       text: PropTypes.string.isRequired,
-      _id: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
       date: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
       color: PropTypes.string
     }).isRequired,
@@ -57,7 +57,7 @@ class CardModal extends Component {
         type: "CHANGE_CARD_TEXT",
         payload: {
           cardText: newText,
-          cardId: card._id,
+          cardId: card.id,
           listId
         }
       });
