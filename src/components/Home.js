@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import slugify from "slugify";
 import Header from "./Header";
 import BoardAdder from "./BoardAdder";
+import '../styles/components/_home.scss';
 
 class Home extends React.Component {
   static propTypes = {
