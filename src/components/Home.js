@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import slugify from "slugify";
 import Header from "./Header";
 import BoardAdder from "./BoardAdder";
+import classnames from 'classnames';
 import '../styles/components/_home.scss';
 
 class Home extends React.Component {
@@ -21,7 +22,7 @@ class Home extends React.Component {
     history: PropTypes.object.isRequired
   };
   render = () => {
-    const { boards, listsById, history } = this.props;
+    const { boards, lists, history } = this.props;
     return (
       <div>
         <Helmet>
@@ -48,7 +49,7 @@ class Home extends React.Component {
                         className="mini-list"
                         style={{
                           height: `${Math.min(
-                            (listsById[listId].cards.length + 1) * 18,
+                            (lists[listId].cards.length + 1) * 18,
                             100
                           )}%`
                         }}

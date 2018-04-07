@@ -31,7 +31,7 @@ const Boards = (state = {}, action) => {
             };
         }
         case "ADD_BOARD": {
-            const { boardTitle, boardId, userId } = action.payload;
+            const { boardTitle, boardId, userId, color="blue" } = action.payload;
             return {
                 ...state,
                 [boardId]: {
@@ -39,7 +39,7 @@ const Boards = (state = {}, action) => {
                     title: boardTitle,
                     lists: [],
                     users: [userId],
-                    color: "blue"
+                    color
                 }
             };
         }
