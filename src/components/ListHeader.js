@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Textarea from "react-textarea-autosize";
 import { Button, Wrapper, Menu, MenuItem } from "react-aria-menubutton";
 import FaTrash from "react-icons/lib/fa/trash";
+import '../styles/components/_listHeader.scss'
 
 class ListTitle extends React.Component {
   static propTypes = {

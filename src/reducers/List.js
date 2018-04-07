@@ -1,7 +1,7 @@
 const Lists = (state = {}, action) => {
     switch (action.type) {
         case "ADD_CARD": {
-            const { listId, cardId } = action.card;
+            const { listId, cardId } = action.payload;
             return {
                 ...state,
                 [listId]: { ...state[listId], cards: [...state[listId].cards, cardId] }

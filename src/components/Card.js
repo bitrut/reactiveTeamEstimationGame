@@ -6,6 +6,7 @@ import CardModal from "./CardModal";
 import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
 import formatMarkdown from "./formatMarkdown";
+import classnames from 'classnames';
 import '../styles/components/_card.scss'
 
 class Card extends Component {
@@ -93,7 +94,7 @@ class Card extends Component {
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 onClick={event => {
-                  provided.dragHandleProps.onClick(event);
+                  //provided.dragHandleProps.onMouseDown(event);
                   this.handleClick(event);
                 }}
                 onKeyDown={event => {

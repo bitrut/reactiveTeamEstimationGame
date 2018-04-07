@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import Textarea from "react-textarea-autosize";
 import shortid from "shortid";
 import ClickOutside from "./ClickOutside";
+import '../styles/components/_cardAdder.scss'
 
 class CardAdder extends React.Component {
   static propTypes = {
