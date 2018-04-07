@@ -85,7 +85,7 @@ class BoardTitle extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   const { boardId } = ownProps.match.params;
   return {
-    boardTitle: state.boardsById[boardId].title,
+    boardTitle: state.Boards[boardId].title,
     boardId
   };
 };

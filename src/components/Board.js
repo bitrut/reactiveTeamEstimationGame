@@ -7,6 +7,7 @@ import List from "./List";
 import ListAdder from "./ListAdder";
 import Header from "./Header";
 import BoardHeader from "./BoardHeader";
+import classnames from "classnames";
 import '../styles/components/_board.scss'
 
 class Board extends React.Component {
@@ -180,7 +181,7 @@ class Board extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   const { board } = ownProps;
   return {
-    lists: board.lists.map(listId => state.listsById[listId]),
+    lists: board.lists.map(listId => state.lists[listId]),
     boardTitle: board.title,
     boardColor: board.color,
     boardId: board._id

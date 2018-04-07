@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { Button, Wrapper, Menu, MenuItem } from "react-aria-menubutton";
 import FaCheck from "react-icons/lib/fa/check";
 import colorIcon from "../assets/images/color-icon.png";
+import classnames from 'classnames';
 
 class ColorPicker extends React.Component {
   static propTypes = {
@@ -54,7 +55,7 @@ class ColorPicker extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   const { boardId } = ownProps.match.params;
   return {
-    boardColor: state.boardsById[boardId].color,
+    boardColor: state.Boards[boardId].color,
     boardId
   };
 };
