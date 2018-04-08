@@ -7,7 +7,6 @@ import slugify from "slugify";
 import Header from "./Header";
 import BoardAdder from "./BoardAdder";
 import classnames from 'classnames';
-import '../styles/components/_home.scss';
 
 class Home extends React.Component {
   static propTypes = {

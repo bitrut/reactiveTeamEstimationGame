@@ -7,7 +7,6 @@ import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
 import formatMarkdown from "./formatMarkdown";
 import classnames from 'classnames';
-import '../styles/components/_card.scss'
 
 class Card extends Component {
   static propTypes = {

@@ -8,8 +8,6 @@ import ListAdder from "./ListAdder";
 import Header from "./Header";
 import BoardHeader from "./BoardHeader";
 import classnames from "classnames";
-import '../styles/components/_board.scss'
-
 class Board extends React.Component {
   static propTypes = {
     lists: PropTypes.arrayOf(
@@ -33,7 +31,7 @@ class Board extends React.Component {
   componentDidMount = () => {
     const { boardId, dispatch } = this.props;
     dispatch({
-      type: "PUT_BOARDid_IN_REDUX",
+      type: "PUT_BOARD_ID_IN_REDUX",
       payload: { boardId }
     });
   };

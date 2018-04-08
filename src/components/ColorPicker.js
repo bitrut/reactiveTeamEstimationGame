@@ -6,7 +6,6 @@ import { Button, Wrapper, Menu, MenuItem } from "react-aria-menubutton";
 import FaCheck from "react-icons/lib/fa/check";
 import colorIcon from "../assets/images/color-icon.png";
 import classnames from 'classnames';
-import "../styles/components/_colorPicker.scss";
 
 class ColorPicker extends React.Component {
   static propTypes = {

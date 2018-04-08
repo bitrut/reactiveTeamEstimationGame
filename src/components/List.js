@@ -6,7 +6,6 @@ import ListHeader from "./ListHeader";
 import Cards from "./Cards";
 import classnames from 'classnames';
 import CardAdder from "./CardAdder";
-import '../styles/components/_list.scss'
 
 class List extends React.Component {
   static propTypes = {

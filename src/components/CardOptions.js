@@ -7,7 +7,6 @@ import MdAlarm from "react-icons/lib/md/access-alarm";
 import Calendar from "./Calendar";
 import ClickOutside from "./ClickOutside";
 import colorIcon from "../assets/images/color-icon.png";
-import '../styles/components/_cardOptions.scss'
 
 class CardOptions extends Component {
   static propTypes = {
