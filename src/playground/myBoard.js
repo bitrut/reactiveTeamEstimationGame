@@ -75,7 +75,6 @@ class App extends Component {
                         Add Blocked
                     </button>
                     <Board
-                        editable
 						onCardAdd={this.handleCardAdd}
                         data={this.state.boardData}
                         draggable
