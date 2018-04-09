@@ -2,7 +2,7 @@
     "lanes": [
       {
         "id": "PLANNED",
-        "title": "Planned Tasks",
+        "title": "1",
         "label": "20/70",
         "style": {"width": 280},
         "cards": [
@@ -38,7 +38,7 @@
       },
       {
         "id": "WIP",
-        "title": "Work In Progress",
+        "title": "2",
         "label": "10/20",
         "style": {"width": 280},
         "cards": [
@@ -53,14 +53,14 @@
       },
       {
         "id": "BLOCKED",
-        "title": "Blocked",
+        "title": "3",
         "label": "0/0",
         "style": {"width": 280},
         "cards": []
       },
       {
         "id": "COMPLETED",
-        "title": "Completed",
+        "title": "5",
         "style": {"width": 280},
         "label": "2/5",
         "cards": [
@@ -82,7 +82,7 @@
       },
       {
         "id": "REPEAT",
-        "title": "Repeat",
+        "title": "8",
         "style": {"width": 280},
         "label": "1/1",
         "cards": [
@@ -97,7 +97,7 @@
       },
       {
         "id": "ARCHIVED",
-        "title": "Archived",
+        "title": "13",
         "style": {"width": 280},
         "label": "1/1",
         "cards": [
@@ -112,7 +112,7 @@
       },
       {
         "id": "ARCHIVED2",
-        "title": "Archived2",
+        "title": "21",
         "style": {"width": 280},
         "label": "1/1",
         "cards": [
@@ -127,7 +127,7 @@
       },
       {
         "id": "ARCHIVED3",
-        "title": "Archived3",
+        "title": "34",
         "style": {"width": 280},
         "label": "1/1",
         "cards": [

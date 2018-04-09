@@ -23,7 +23,7 @@ class Home extends React.Component {
   render = () => {
     const { boards, lists, history } = this.props;
     return (
-      <div>
+      <div style={{'width':'100%'}}>
         <Helmet>
           <title>Home | React Kanban</title>
         </Helmet>

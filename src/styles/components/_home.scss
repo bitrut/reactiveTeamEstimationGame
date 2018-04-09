@@ -31,28 +31,9 @@ $add-board-focus-bg: #ccc;
 .main-content {
   display: inline-flex;
   flex-direction: column;
-  width: 4 * $board-width + 8 * $board-margin;
+  width: 100%;
   margin: $main-margin;
 }
-
-@media (max-width: 4 * $board-width + 8 * $board-margin + 2 * $main-margin) {
-  .main-content {
-    width: 3 * $board-width + 6 * $board-margin;
-  }
-}
-
-@media (max-width: 3 * $board-width + 6 * $board-margin + 2 * $main-margin) {
-  .main-content {
-    width: 2 * $board-width + 4 * $board-margin;
-  }
-}
-@media (max-width: 2 * $board-width + 4 * $board-margin + 2 * $main-margin) {
-  .main-content {
-    width: $board-width + 2 * $board-margin;
-    margin: $main-margin 0;
-  }
-}
-
 .main-content h1 {
   margin: 20px 5px;
   font-size: 22px;
