@@ -98,10 +98,10 @@ class Card extends Component {
                   this.handleKeyDown(event);
                 }}
                 onMouseEnter={event => {
-                  this.setState({ isEditOpen: !this.state.isEditOpen });
+                  this.setState({ isEditOpen: true });
                 }}
                 onMouseLeave={event => {
-                  this.setState({ isEditOpen: !this.state.isEditOpen });
+                  this.setState({ isEditOpen: false });
                 }}
                 style={{
                   ...provided.draggableProps.style,
