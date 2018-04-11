@@ -7,6 +7,7 @@ import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
 import formatMarkdown from "./formatMarkdown";
 import classnames from 'classnames';
+import FaPencil from 'react-icons/lib/fa/pencil';
 
 class Card extends Component {
   static propTypes = {
@@ -24,7 +25,8 @@ class Card extends Component {
   constructor() {
     super();
     this.state = {
-      isModalOpen: false
+      isModalOpen: false,
+      isEditOpen: false
     };
   }
 
@@ -41,7 +43,6 @@ class Card extends Component {
       this.toggleCardEditor(event);
     }
   };
-
   handleKeyDown = event => {
     // Only open card on enter since spacebar is used by react-beautiful-dnd for keyboard dragging
     if (event.keyCode === 13 && event.target.tagName.toLowerCase() !== "a") {
@@ -92,19 +93,25 @@ class Card extends Component {
                 }}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
-                onClick={event => {
-                  //provided.dragHandleProps.onMouseDown(event);
-                  this.handleClick(event);
-                }}
                 onKeyDown={event => {
                   provided.dragHandleProps.onKeyDown(event);
                   this.handleKeyDown(event);
+                }}
+                onMouseEnter={event => {
+                  this.setState({ isEditOpen: !this.state.isEditOpen });
+                }}
+                onMouseLeave={event => {
+                  this.setState({ isEditOpen: !this.state.isEditOpen });
                 }}
                 style={{
                   ...provided.draggableProps.style,
                   background: card.color
                 }}
               >
+              {this.state.isEditOpen && <FaPencil onClick={event => {
+                  this.handleClick(event);
+                }}
+              />}
                 <div
                   className="card-title-html"
                   dangerouslySetInnerHTML={{
