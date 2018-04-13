@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Draggable } from "react-beautiful-dnd";
 import CardEditModal from "./CardEditModal";
+import CardModal from "./CardModal"
 import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
 import formatMarkdown from "./formatMarkdown";
@@ -25,13 +26,14 @@ class Card extends Component {
   constructor() {
     super();
     this.state = {
+      isModalEditOpen: false,
       isModalOpen: false,
       isEditOpen: false
     };
   }
 
   toggleCardEditor = () => {
-    this.setState({ isModalOpen: !this.state.isModalOpen });
+    this.setState({ isModalEditOpen: !this.state.isModalEditOpen });
   };
 
   handleClick = event => {
@@ -75,7 +77,7 @@ class Card extends Component {
 
   render() {
     const { card, index, listId, isDraggingOver } = this.props;
-    const { isModalOpen } = this.state;
+    const { isModalEditOpen, isModalOpen } = this.state;
     const checkboxes = findCheckboxes(card.text);
     return (
       <div>
@@ -104,7 +106,7 @@ class Card extends Component {
                   this.setState({ isEditOpen: false });
                 }}
                 onClick={event => {
-                  console.log("click");
+                  this.handleClick(event);
                 }}
                 style={{
                   ...provided.draggableProps.style,
@@ -132,11 +134,17 @@ class Card extends Component {
           )}
         </Draggable>
         <CardEditModal
-          isOpen={isModalOpen}
+          isOpen={isModalEditOpen}
           cardElement={this.ref}
           card={card}
           listId={listId}
           toggleCardEditor={this.toggleCardEditor}
+        />
+        <CardModal 
+          isOpen={isModalOpen}
+          cardElement={this.ref}
+          card={card}
+          listId={listId}
         />
       </div>
     );
