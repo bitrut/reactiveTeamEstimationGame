@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Draggable } from "react-beautiful-dnd";
-import CardModal from "./CardModal";
+import CardEditModal from "./CardEditModal";
 import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
 import formatMarkdown from "./formatMarkdown";
@@ -103,6 +103,9 @@ class Card extends Component {
                 onMouseLeave={event => {
                   this.setState({ isEditOpen: false });
                 }}
+                onClick={event => {
+                  console.log("click");
+                }}
                 style={{
                   ...provided.draggableProps.style,
                   background: card.color
@@ -128,7 +131,7 @@ class Card extends Component {
             </div>
           )}
         </Draggable>
-        <CardModal
+        <CardEditModal
           isOpen={isModalOpen}
           cardElement={this.ref}
           card={card}
