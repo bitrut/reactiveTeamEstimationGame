@@ -93,7 +93,7 @@ class Card extends Component {
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
                 onClick={event => {
-                  provided.dragHandleProps.onMouseDown(event);
+                  //provided.dragHandleProps.onMouseDown(event);
                   this.handleClick(event);
                 }}
                 onKeyDown={event => {
