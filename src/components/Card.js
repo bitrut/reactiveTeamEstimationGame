@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Draggable } from "react-beautiful-dnd";
-import CardEditModal from "./CardEditModal";
-import CardModal from "./CardModal"
+import CardModal from "./CardModal";
 import CardBadges from "./CardBadges";
 import { findCheckboxes } from "../utils";
 import formatMarkdown from "./formatMarkdown";
 import classnames from 'classnames';
-import FaPencil from 'react-icons/lib/fa/pencil';
 
 class Card extends Component {
   static propTypes = {
@@ -26,14 +24,12 @@ class Card extends Component {
   constructor() {
     super();
     this.state = {
-      isModalEditOpen: false,
-      isModalOpen: false,
-      isEditOpen: false
+      isModalOpen: false
     };
   }
 
   toggleCardEditor = () => {
-    this.setState({ isModalEditOpen: !this.state.isModalEditOpen });
+    this.setState({ isModalOpen: !this.state.isModalOpen });
   };
 
   handleClick = event => {
@@ -45,6 +41,7 @@ class Card extends Component {
       this.toggleCardEditor(event);
     }
   };
+
   handleKeyDown = event => {
     // Only open card on enter since spacebar is used by react-beautiful-dnd for keyboard dragging
     if (event.keyCode === 13 && event.target.tagName.toLowerCase() !== "a") {
@@ -77,7 +74,7 @@ class Card extends Component {
 
   render() {
     const { card, index, listId, isDraggingOver } = this.props;
-    const { isModalEditOpen, isModalOpen } = this.state;
+    const { isModalOpen } = this.state;
     const checkboxes = findCheckboxes(card.text);
     return (
       <div>
@@ -95,28 +92,19 @@ class Card extends Component {
                 }}
                 {...provided.draggableProps}
                 {...provided.dragHandleProps}
+                onClick={event => {
+                  provided.dragHandleProps.onMouseDown(event);
+                  this.handleClick(event);
+                }}
                 onKeyDown={event => {
                   provided.dragHandleProps.onKeyDown(event);
                   this.handleKeyDown(event);
-                }}
-                onMouseEnter={event => {
-                  this.setState({ isEditOpen: true });
-                }}
-                onMouseLeave={event => {
-                  this.setState({ isEditOpen: false });
-                }}
-                onClick={event => {
-                  this.handleClick(event);
                 }}
                 style={{
                   ...provided.draggableProps.style,
                   background: card.color
                 }}
               >
-              {this.state.isEditOpen && <FaPencil onClick={event => {
-                  this.handleClick(event);
-                }}
-              />}
                 <div
                   className="card-title-html"
                   dangerouslySetInnerHTML={{
@@ -133,18 +121,12 @@ class Card extends Component {
             </div>
           )}
         </Draggable>
-        <CardEditModal
-          isOpen={isModalEditOpen}
-          cardElement={this.ref}
-          card={card}
-          listId={listId}
-          toggleCardEditor={this.toggleCardEditor}
-        />
-        <CardModal 
+        <CardModal
           isOpen={isModalOpen}
           cardElement={this.ref}
           card={card}
           listId={listId}
+          toggleCardEditor={this.toggleCardEditor}
         />
       </div>
     );
