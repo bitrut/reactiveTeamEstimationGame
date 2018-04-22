@@ -76,6 +76,7 @@ You can edit the title of the board by clicking it. You can also change the colo
     }
   ];
 
+
   // Append a warning message to the top of list3 for guest users only
   if (!userId) {
     list3.unshift({
@@ -104,6 +105,11 @@ Since you are not signed in, your changes will not persist after you leave the w
         listId: shortid.generate(),
         listTitle: "How to use",
         cards: appendAttributes(list3)
+      },
+      {
+        listId: shortid.generate(),
+        listTitle: "react-trello",
+        cards: []
       }
     ],
     users: userId ? [userId] : []
