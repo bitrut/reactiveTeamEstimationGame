@@ -23,8 +23,7 @@ class Board extends React.Component {
     super(props);
     this.state = {
       startX: null,
-      startScrollX: null,
-      isModalOpen: false
+      startScrollX: null
     };
   }
 
