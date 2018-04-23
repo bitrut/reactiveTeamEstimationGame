@@ -4,6 +4,8 @@ import { withRouter } from "react-router-dom";
 import Modal from 'react-modal';
 import { connect } from "react-redux";
 import FaTrash from "react-icons/lib/fa/trash";
+import shortid from "shortid";
+import GitHub from 'github-api';
 
 class ImportModal extends React.Component {
   static propTypes = {
@@ -18,8 +20,8 @@ class ImportModal extends React.Component {
     super();
     this.state = {
       showModal: false,
-      user: '',
-      project: ''
+      user: 'rcdexta',
+      project: 'react-trello'
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -37,8 +39,32 @@ class ImportModal extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state.user);
-    console.log(this.state.project);
+    const {match, history, dispatch} = this.props;
+    const {boardId} = match.params;
+    const myListId = shortid.generate();
+    dispatch({
+        type: "ADD_LIST",
+        payload: {
+            listId: myListId,
+            listTitle: this.state.project,
+            boardId
+        }
+    });
+    const gh = new GitHub();
+    const issues = gh.getIssues(this.state.user,this.state.project)
+    issues.listIssues().then(function(data){ 
+        data.data.forEach(myElement => {
+            dispatch({
+                type: "ADD_CARD",
+                payload: {
+                    cardId: shortid.generate(),
+                    cardText: myElement.body,
+                    listId: myListId
+                }
+            })
+        });
+    });
+    this.handleCloseModal()
   }
 
   render = () => (

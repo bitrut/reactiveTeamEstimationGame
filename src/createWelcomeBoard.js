@@ -105,11 +105,6 @@ Since you are not signed in, your changes will not persist after you leave the w
         listId: shortid.generate(),
         listTitle: "How to use",
         cards: appendAttributes(list3)
-      },
-      {
-        listId: shortid.generate(),
-        listTitle: "react-trello",
-        cards: []
       }
     ],
     users: userId ? [userId] : []

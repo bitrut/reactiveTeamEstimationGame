@@ -10,7 +10,6 @@ import shortid from "shortid";
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import example from './createWelcomeBoard';
-import GitHub from 'github-api';
 
 const store = configureStore();
 
@@ -31,23 +30,6 @@ example_board.lists.forEach(element => {
             boardId: example_board.boardId,
         }
     });
-    if (element.listTitle === 'react-trello'){
-        const gh = new GitHub();
-        const issues = gh.getIssues('rcdexta','react-trello')
-        issues.listIssues().then(function(data){ 
-            data.data.forEach(myElement => {
-            console.log("added");
-            store.dispatch({
-                type: "ADD_CARD",
-                payload: {
-                    cardId: shortid.generate(),
-                    cardText: myElement.body,
-                    listId: element.listId
-                }
-                })
-            });
-        });
-    }
     element.cards.forEach(e => {
         store.dispatch({
             type: "ADD_CARD",
