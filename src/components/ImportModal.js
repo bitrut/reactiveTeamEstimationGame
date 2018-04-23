@@ -17,19 +17,15 @@ class ImportModal extends React.Component {
   constructor () {
     super();
     this.state = {
-      showModal: false
+      showModal: false,
+      user: '',
+      project: ''
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 }
-
-  handleSelection = () => {
-    const { dispatch, match, history } = this.props;
-    const { boardId } = match.params;
-    dispatch({ type: "DELETE_BOARD", payload: { boardId } });
-    history.push("/");
-  };
 
   handleOpenModal () {
     this.setState({ showModal: true });
@@ -37,6 +33,12 @@ class ImportModal extends React.Component {
   
   handleCloseModal () {
     this.setState({ showModal: false });
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state.user);
+    console.log(this.state.project);
   }
 
   render = () => (
@@ -61,10 +63,14 @@ class ImportModal extends React.Component {
                 background: "white"
             }}
             >
-                <form>
+                <form onSubmit={this.handleSubmit}>
                 <label>
-                    Name:
-                    <input type="text" name="name" />
+                    Username:
+                    <input type="text" value={this.state.user} name="user" onChange={e => this.setState({user: e.target.value})}/>
+                </label>
+                <label>
+                    Project:
+                    <input type="text" value={this.state.project} name="project" onChange={e => this.setState({project: e.target.value})} />
                 </label>
                 <input type="submit" value="Submit" />
                 </form>
