@@ -47,8 +47,28 @@ class ImportModal extends React.Component {
         <Modal 
             isOpen={this.state.showModal}
             contentLabel="Minimal Modal Example"
+            overlayClassName="modal-underlay"
+            includeDefaultStyles={false}
+            className="modal"
             >
-            <button onClick={this.handleCloseModal}>Close Modal</button>
+            <button className="board-deleter-button" onClick={this.handleCloseModal}>Close Modal</button>
+            <div
+                style={{
+                margin: "10%",
+                minHeight: "300px",
+                width: "300px",
+                boxShadow: "0px 0px 3px 2px rgb(0, 180, 255)",
+                background: "white"
+            }}
+            >
+                <form>
+                <label>
+                    Name:
+                    <input type="text" name="name" />
+                </label>
+                <input type="submit" value="Submit" />
+                </form>
+            </div>
         </Modal>
     </div>
   );
