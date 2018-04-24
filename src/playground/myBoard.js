@@ -1,6 +1,6 @@
 import React from 'react';
 import Board from 'react-trello';
-import "babel-polyfill";
+// import "babel-polyfill";
 
 const boardDataJson = require('./data.json')
 
@@ -18,7 +18,7 @@ class MyBoard extends React.Component {
         console.log(`cardId: ${cardId}`)
         console.log(`laneId: ${laneId}`)
     }
-    
+
     handleDragEnd = (cardId, sourceLaneId, targetLaneId) => {
         console.log('drag ended')
         console.log(`cardId: ${cardId}`)

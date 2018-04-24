@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // import { BrowserRouter } from 'react-router-dom';
 // import configureStore from './store/configureStore';
 // import AppRouter from './routers/AppRouter';
-import App from './playground/myBoard';
+import MyBoard from './playground/myBoard';
 // import Router from './routers/AppRouter';
 // import shortid from "shortid";
 // import 'normalize.css/normalize.css';
@@ -51,4 +51,4 @@ import './styles/styles.scss';
 // );
 
 //ReactDOM.render(jsx, document.getElementById('app'));
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<MyBoard/>, document.getElementById('app'));
