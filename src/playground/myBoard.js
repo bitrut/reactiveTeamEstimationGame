@@ -1,36 +1,44 @@
-import React, {Component} from 'react'
-import {Board} from 'react-trello'
-require("babel-polyfill");
-const data = require('./data.json');
+import React from 'react';
+import Board from 'react-trello';
+import "babel-polyfill";
 
-const handleDragStart = (cardId, laneId) => {
-    console.log('drag started')
-    console.log(`cardId: ${cardId}`)
-    console.log(`laneId: ${laneId}`)
-}
+const boardDataJson = require('./data.json')
 
-const handleDragEnd = (cardId, sourceLaneId, targetLaneId) => {
-    console.log('drag ended')
-    console.log(`cardId: ${cardId}`)
-    console.log(`sourceLaneId: ${sourceLaneId}`)
-    console.log(`targetLaneId: ${targetLaneId}`)
-}
+class MyBoard extends React.Component {
 
-class App extends Component {
-    state = {boardData: {lanes: []}}
+    constructor(props){
+        super(props);
+        this.state = {
+            boardData: {lanes: []}
+        };
+    }
+
+    handleDragStart = (cardId, laneId) => {
+        console.log('drag started')
+        console.log(`cardId: ${cardId}`)
+        console.log(`laneId: ${laneId}`)
+    }
+    
+    handleDragEnd = (cardId, sourceLaneId, targetLaneId) => {
+        console.log('drag ended')
+        console.log(`cardId: ${cardId}`)
+        console.log(`sourceLaneId: ${sourceLaneId}`)
+        console.log(`targetLaneId: ${targetLaneId}`)
+    }
 
     setEventBus = eventBus => {
         this.setState({eventBus})
     }
 
-    async componentWillMount() {
-        const response = await this.getBoard()
-         this.setState({boardData: response})
+    async componentDidMount() {
+        const response = await this.getBoard();
+        console.log("My response: ", response);
+        this.setState({boardData: response});
     }
 
     getBoard() {
         return new Promise(resolve => {
-            resolve(data)
+            resolve(boardDataJson)
         })
     }
 
@@ -75,13 +83,14 @@ class App extends Component {
                         Add Blocked
                     </button>
                     <Board
+                        editable
 						onCardAdd={this.handleCardAdd}
                         data={this.state.boardData}
                         draggable
                         onDataChange={this.shouldReceiveNewData}
                         eventBusHandle={this.setEventBus}
-                        handleDragStart={handleDragStart}
-                        handleDragEnd={handleDragEnd}
+                        handleDragStart={this.handleDragStart}
+                        handleDragEnd={this.handleDragEnd}
                     />
                 </div>
             </div>
@@ -89,4 +98,4 @@ class App extends Component {
     }
 }
 
-export default App
+export default MyBoard;
